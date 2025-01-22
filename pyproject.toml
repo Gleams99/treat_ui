@@ -1,0 +1,47 @@
+[project]
+name = "treat-ui"
+version = "0.1.0"
+description = "UI Testing of Sweet Shop"
+authors = [
+    {name = "Gleams API user",email = "Stephen.Swannell+ghapi@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12,<4.0"
+package-mode = false
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = [
+    "-rfExXpw",
+    "--strict-markers",
+    "--strict-config",
+    "--html=report.html",
+    "--self-contained-html",
+    "--save_screenshots"
+]
+markers = [
+    "wip",
+    "ui",
+]
+env_files = [
+    ".env"
+]
+
+[tool.poetry.requires-plugins]
+poetry-plugin-export = ">=1.8"
+
+[tool.poetry.dependencies]
+pytest = "^8.3.4"
+pytest-selenium = "^4.1.0"
+pytest-dotenv = "^0.5.2"
+loguru = "^0.7.3"
+chromedriver-autoinstaller = "^0.6.4"
+pytest-html = "^4.1.1"
+markdown = "^3.7"
+strenum = "^0.4.15"
+pytest-screenshot-on-failure = "^1.0.0"
