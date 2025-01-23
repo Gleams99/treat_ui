@@ -19,7 +19,6 @@ class SweetShopSite(BaseUISite):
     def login_as(self, *, email: str, password: str):
         self.login_page.goto_page()
         self.login_page.attempt_login(email=email, password=password)
-        assert False
 
     def view_basket(self):
         self.basket_page.goto_page()

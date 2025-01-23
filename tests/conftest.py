@@ -4,7 +4,6 @@ import chromedriver_autoinstaller
 from loguru import logger
 
 
-
 @pytest.fixture
 def ensure_latest_chromedriver():
     logger.debug("Ensuring chromedriver is correct version")
