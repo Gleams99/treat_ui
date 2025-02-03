@@ -101,3 +101,50 @@ This allows for increased test scenarios without code duplication.
 
 - Locators: Better handling of different locator strategies
 - Browser Configurations:
+
+
+### Updates
+
+- Selenium4 uses services
+- Model tto define specific browser options and capabilitties
+- library of specific browser combos
+- pytest argument tto allow user to select specific cfg
+- support for ff and chrome
+
+
+## Selenium remote 
+
+### Docker
+
+```shell
+docker-compose -f treat_ui/docker/dc-selenium.yaml up -d
+
+docker-compose scale chrome=5
+
+docker-compose scale firefox=5
+```
+http://localhost:16686/search
+http://localhost:4444/ui/
+
+## Capabilities & Options
+
+https://www.w3.org/TR/webdriver/#capabilities
+
+https://developer.chrome.com/docs/chromedriver/capabilities#recognized_capabilities
+
+https://developer.mozilla.org/en-US/docs/Web/WebDriver/Capabilities/firefoxOptions
+
+https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/safari/SafariOptions.html
+
+https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/edge/EdgeDriver.html
+
+https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/ie/InternetExplorerOptions.html
+
+
+## Parallel testing Strategies
+
+- parallel test execution on same browser
+- different browser for same test
+
+Easiest is use different cfg to run suites against diff browsers
+- can scale specific browsers nodes baseed on number of cpu
